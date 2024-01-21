@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .image-container {
+        position: relative;
+    }
+
+    .text-overla {
+        max-width: 1000px;
+        color: black;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px; /* Taille du texte personnalisée */
+    }
+
+    .white-frame {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 1000px;
+        height: 400px;
+        max-width: 500px;
+        z-index: 3;
+        position: absolute;
+        top: 60px; /* Ajustez cette valeur selon vos besoins */
+        left: 600px;
+    }
+
+    /* Ajoutez d'autres styles personnalisés selon vos besoins */
+
+    footer {
+        margin-top: 20px; /* Marge en haut du pied de page pour éviter le chevauchement */
+    }
+</style>
+
+<div class="image-container">
+    <img src="/images/bgcu.jpg" style="width: 100%; height: 630px;" />
+    <div class="white-frame">
+        <div class="text-overla">
+            <p>
+                "Découvrez l'expérience gastronomique ultime au cœur de Casablanca au 'Le Côté des Délices'. Notre café-restaurant vous invite à un voyage culinaire exceptionnel, offrant une variété alléchante d'entrées, de plats principaux, de pizzas, de burgers, de sushis, de desserts exquis et de boissons rafraîchissantes. Plongez dans l'harmonie des saveurs délicieuses et savourez chaque instant dans une atmosphère accueillante et chaleureuse. Bienvenue dans un lieu où chaque bouchée est une expérience inoubliable."
+            </p>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,40 @@
+﻿@model myapp.Models.PlatSignature
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Ajouter</h1>
+
+<h4>PlatSignature</h4>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3 border border-dark p-4 rounded-top" style="width:650px">
+            <h1 class="text-center text-info">Repas Image</h1>
+            <form method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger text-center"></div>
+                <div class="form-group">
+                    <label asp-for="Nom"></label>
+                    <input type="text" asp-for="Nom" placeholder="Entrer Nom" class="form-control" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <input type="text" asp-for="Description" placeholder="Entrer description" class="form-control" />
+                </div>
+                <br />
+
+                <!-- Ajout du champ CategorieId -->
+                <br />
+
+                
+                <div class="form-group m-4">
+                    <input type="submit" class="btn btn-group-sm btn-primary float-right" value="Ajouter" />
+                </div>
+                <a class="btn btn-sm btn-warning p-2 m-2 " asp-action="Index" asp-controller="Plats">Retour à la liste</a>
+            </form>
+        </div>
+    </div>
+</div>
+

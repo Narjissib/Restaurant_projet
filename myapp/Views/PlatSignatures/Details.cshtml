@@ -1,0 +1,31 @@
+﻿@model myapp.Models.PlatSignature
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detailles</h1>
+
+<div>
+    <h4>PlatSignature</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Modifier" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Retourà la liste</a>
+</div>
+

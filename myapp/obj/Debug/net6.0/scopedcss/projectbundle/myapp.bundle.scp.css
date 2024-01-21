@@ -1,0 +1,67 @@
+/* _content/myapp/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Votre code existant */
+
+a.navbar-brand[b-sfcgpkgsl6] {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a[b-sfcgpkgsl6] {
+    color: #808080;
+}
+
+.btn-primary[b-sfcgpkgsl6] {
+    color: #fff;
+    background-color: #000000;
+    border-color: #ffffff;
+}
+
+.nav-pills .nav-link.active[b-sfcgpkgsl6], .nav-pills .show > .nav-link[b-sfcgpkgsl6] {
+    color: #fff;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.border-top[b-sfcgpkgsl6] {
+    border-top: 1px solid #ffffff;
+}
+
+.border-bottom[b-sfcgpkgsl6] {
+    border-bottom: 1px solid #ffffff;
+}
+
+.box-shadow[b-sfcgpkgsl6] {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-sfcgpkgsl6] {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+html[b-sfcgpkgsl6] {
+    position: relative;
+    min-height: 100%;
+}
+
+body[b-sfcgpkgsl6] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% de la hauteur de la fenêtre visible */
+}
+
+main[b-sfcgpkgsl6] {
+    flex: 1; /* Le contenu principal prendra tout l'espace disponible */
+}
+
+footer[b-sfcgpkgsl6] {
+    height: 45px; /* La hauteur du footer */
+    background-color: white;
+    width: 100%; /* Largeur totale */
+    position: fixed;
+    bottom: 0;
+}
+
+/* Fin de votre code existant */
+

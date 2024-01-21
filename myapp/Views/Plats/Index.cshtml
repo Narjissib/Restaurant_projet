@@ -1,0 +1,63 @@
+﻿@model IEnumerable<myapp.Models.Plat>
+
+@{
+    ViewData["Title"] = "Index";
+    // Initialiser le modèle avec une liste vide si il est nul
+}
+
+<style>
+    .btn-dark {
+        background-color: black;
+    }
+
+    html, body {
+        margin: 0;
+    }
+
+    #main-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+        padding: 20px;
+        margin-bottom: 20px; /* Ajout de marge en bas */
+    }
+
+    .custom-card {
+        margin-right: 20px;
+        flex: 1 1 200px;
+        max-width: 500px;
+    }
+
+    main {
+        flex: 1;
+        padding-bottom: 45px;
+    }
+</style>
+
+<h1>Entrée</h1>
+
+<div id="main-content" class="row">
+    @if (Model != null && Model.Any())
+    {
+        <p>Nombre total d'éléments dans le modèle : @Model.Count()</p>
+        @foreach (var plat in Model)
+        {
+            <div class="col-md-4 mb-4 custom-card">
+                <div class="card d-flex h-100" style="width:300px;height:350px;">
+                    <img src="~/images/@plat.ImgUrl" class="card-img-top img-fluid custom-img" alt="@plat.Description" style="width: 100%;height: 200px;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">@plat.Description</h5>
+                        <h5 class="card-title">@plat.Prix</h5>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Model is null</p>
+    }
+</div>
+<a asp-action="Index" asp-controller="Categories" class="btn btn-dark">Retour aux catégories</a>
+

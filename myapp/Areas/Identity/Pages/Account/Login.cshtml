@@ -1,0 +1,133 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Se connecter";
+}
+
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .content-container {
+        flex: 1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background-image {
+        flex: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url('/images/vintage-old-rustic-cutlery-dark.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 649px;
+    }
+
+    .white-frame {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 700px;
+        max-width: 1000px;
+        z-index: 3;
+        position: absolute;
+        top: 60px; /* Ajustez cette valeur selon vos besoins */
+        left: 500px;
+    }
+
+    .custom-button {
+        color: beige;
+        background-color: black; /* Couleur personnalisée du bouton */
+        border: 1px solid white; /* Bordure de la même couleur que le fond */
+        outline: none; /* Supprimer le contour par défaut lors du focus */
+    }
+
+        .custom-button:hover {
+            background-color: darkgrey /* Couleur que vous souhaitez lors du focus */;
+            border: 1px solid /* Bordure que vous souhaitez lors du focus */;
+        }
+
+    a {
+        color: darkgrey;
+    }
+
+        a:hover {
+            color: black;
+        }
+
+    .form-control:focus {
+        border-color: beige;
+        box-shadow: 0 0 0 0.25rem beige;
+    }
+</style>
+
+<!-- Ajoutez la référence à jQuery -->
+<head>
+    <!-- Autres balises head... -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<div class="content-container">
+    <div class="background-image"></div>
+    <div class="white-frame">
+        <h1>@ViewData["Title"]</h1>
+        <form id="account" class="needs-validation" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                <label asp-for="Input.Email" class="form-label"></label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <br />
+            <br />
+            <div class="form-floating">
+                <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                <label asp-for="Input.Password" class="form-label"></label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <br />
+
+            <br />
+            <div>
+                <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary custom-button">Se connecter</button>
+            </div>
+            <br />
+
+        </form>
+    </div>
+</div>
+
+
+<!-- Ajoutez le script JavaScript jQuery pour la détection de la touche Entrée -->
+<script>
+    $(document).ready(function () {
+        $('#account').on('submit', function (e) {
+            e.preventDefault(); // Empêche la soumission normale du formulaire
+
+            // Simulez l'enregistrement de l'e-mail dans le système (remplacez cela par votre propre logique)
+            // Cela peut être basé sur une vérification AJAX ou d'autres conditions
+            var emailSavedInSystem = true; // Exemple : supposez que l'e-mail est enregistré dans le système
+
+            // Si l'e-mail est enregistré dans le système, changez la couleur de fond en beige
+            if (emailSavedInSystem) {
+                $('#account input[name="Input.Email"]').css('background-color', 'beige');
+            }
+
+            // Continuez avec la soumission du formulaire
+            this.submit();
+        });
+    });
+</script>

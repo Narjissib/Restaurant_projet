@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - projetnet</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/projetnet.styles.css" asp-append-version="true" />
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; /* Ajoutez ceci pour supprimer la marge par défaut du body */
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    height: 50px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow flex-column exclude-background">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow flex-column">
+                <div class="container-fluid">
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-column">
+                        <ul class="navbar-nav flex-column">
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" style="width:100%" asp-area="" asp-controller="Home" asp-action="Index">Acceuil</a>
+                                    </li>
+                                   
+                            }
+
+                            <partial name="_LoginPartial" />
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </nav>
+    </header>
+    <div class="container main-content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Le coté des délices - Casablanca - Maroc -
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Confirmation";
+}
+
+<style>
+    .card-body {
+        background-color: white;
+    }
+</style>
+
+<div class="container mt-5" style="width: 400px; height: 220px">
+    <div class="card bg-light">
+        <div class="card-body text-center">
+            <h1 class="card-title">Confirmation</h1>
+            <img src="/images/categ.jpg" alt="Image de confirmation" class="img-fluid mb-4" style="width: 90px; height: 90px" />
+            <p class="lead">Le plat signature a été ajouté avec succès!</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Redirige vers la page d'index après 3 secondes (3000 millisecondes)
+    setTimeout(function () {
+        window.location.href = '/PlatSignatures'; // Assurez-vous que c'est le chemin correct vers la page d'index
+    }, 2000);
+</script>

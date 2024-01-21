@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<div class="login-partial navbar-nav flex-column">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" style="width:100%" asp-action="Index" asp-controller="Categories">Categorie</a>
+        </li>
+       
+        <li class="nav-item">
+            <a class="nav-link text-dark" style="width:100%" asp-area="" asp-controller="Home" asp-action="Formation">Découvrez-nous</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" style="width:100%" asp-action="Index" asp-controller="PlatSignatures">Plat-Signature</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" style="width:100%" title="Manage">Bonjour @User.Identity?.Name!</a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout">
+                <button type="submit" class="nav-link btn btn-link text-dark logout-btn">Se déconnecter</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">S'inscrire</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Se connecter</a>
+        </li>
+    }
+</div>

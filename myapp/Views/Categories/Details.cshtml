@@ -1,0 +1,37 @@
+﻿@model myapp.Models.Categorie
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div style="width:1000px;height:700px">
+
+    <h1>Details</h1>
+
+    <div class="card" style="width:1000px;height:500px">
+        <div class="card-body">
+            <h4 class="card-title">Categorie</h4>
+            <hr />
+
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nom)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Nom)
+                </dd>
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ImgUrl)
+                </dt>
+                <dd class="col-sm-10">
+                    <img src="~/images/@Model?.ImgUrl" class="img-fluid" alt="@Model?.Nom" style="width:500px;height:300px" />
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <br />
+
+    <div>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

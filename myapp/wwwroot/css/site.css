@@ -1,0 +1,89 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+.navbar {
+    background-color: bisque !important;
+    width: 290px;
+    height: 93%;
+    position: fixed; /* Fixe la navbar en haut de la page */
+    top: 0; /* Positionne la navbar tout en haut de la page */
+    z-index: 100; /* Assurez-vous que la navbar est au-dessus des autres éléments */
+    overflow-y: auto; /* Ajoute une barre de défilement vertical si nécessaire */
+}
+
+    .navbar .navbar-nav {
+        width: 100%;
+        text-align: left;
+        padding: 15px;
+    }
+
+    .navbar .nav-item {
+        width: 100%;
+        border-radius: 15px;
+        text-align: left;
+        transition: background-color 0.3s;
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+
+        .navbar .nav-item a {
+            width: 100%;
+            display: block;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .navbar .nav-item:hover,
+        .navbar .nav-item:active {
+            background-color: white;
+        }
+
+/* Additional styles for the main container */
+.main-content {
+    margin-left: 290px; /* Ajustez cette valeur en fonction de la largeur de votre barre de navigation */
+    flex-grow: 1; /* Faites en sorte que le contenu occupe tout l'espace disponible */
+    overflow: hidden; /* Empêche le contenu de déborder sur la gauche de la page */
+}
+
+
+.login-partial {
+    padding: 0;
+    margin-left: -15px;
+}
+
+.image-container {
+    position: relative;
+    width: 1230px;
+    height: 640px;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    font-family: 'Brush Script MT'
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}

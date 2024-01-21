@@ -1,0 +1,62 @@
+﻿@model myapp.Models.Categorie
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Categorie</h4>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3 border border-dark p-4 rounded-top" style="width:650px">
+            <h1 class="text-center text-info">Upload Laptop Image</h1>
+            <form method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger text-center"></div>
+                <div class="form-group">
+                    <label asp-for="Nom"></label>
+                    <input type="text" asp-for="Nom" placeholder="Enter name" class="form-control" />
+                </div>
+                <br />
+
+                <div class="row">
+                    <div class="col-8">
+                        <label asp-for="Image"></label>
+                        <input type="file" class="form-control" asp-for="Image" id="ChooseImg" />
+                    </div>
+                    <div class="col-4">
+                        <img src="https://placehold.jp/150*150.png" style="width:200px;height:200px; border:1px solid red; border-radius:10px; padding:10px;" alt="Categorie image" id="PrevImg" />
+                    </div>
+                </div>
+                <div class="form-group m-4">
+                    <input type="submit" class="btn btn-group-sm btn-primary float-right" value="SUBMIT" />
+                </div>
+                <a class="btn btn-sm btn-warning p-2 m-2 " asp-action="Index" asp-controller="Categories">Back to List</a>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            $('#ChooseImg').change(function (e) {
+                var url = $('#ChooseImg').val();
+                var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+                if ($('#ChooseImg')[0].files && $('#ChooseImg')[0].files[0] && (ext == "gif" || ext == "jpg" || ext == "jfif" || ext == "png" || ext == "bmp")) {
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        var output = $('#PrevImg');
+                        output.attr('src', reader.result);
+                    }
+                    reader.readAsDataURL(e.target.files[0]);
+                }
+            });
+        });
+    </script>
+}
+

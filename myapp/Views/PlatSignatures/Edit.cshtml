@@ -1,0 +1,57 @@
+﻿@model myapp.Models.PlatSignature
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+    /* Copiez ici le code CSS de la page "Ajouter" */
+    .form-containe {
+        /* Vos styles CSS pour le conteneur du formulaire */
+        background-color: white;
+        width: 650px;
+        height:300px;
+        border: 1px solid #000;
+        border-radius: 10px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    /* Ajoutez d'autres styles si nécessaire */
+</style>
+
+<h1>Modifier</h1>
+
+<h4>PlatSignature</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4 form-containe">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nom" class="control-label"></label>
+                <br />
+                <input asp-for="Nom" class="form-control" />
+                <br />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <br />
+                <input asp-for="Description" class="form-control" />
+                <br />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retour à la liste</a>
+</div>

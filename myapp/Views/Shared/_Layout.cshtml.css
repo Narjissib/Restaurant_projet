@@ -1,0 +1,66 @@
+﻿/* Votre code existant */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a {
+    color: #808080;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #000000;
+    border-color: #ffffff;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.border-top {
+    border-top: 1px solid #ffffff;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #ffffff;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% de la hauteur de la fenêtre visible */
+}
+
+main {
+    flex: 1; /* Le contenu principal prendra tout l'espace disponible */
+}
+
+footer {
+    height: 45px; /* La hauteur du footer */
+    background-color: white;
+    width: 100%; /* Largeur totale */
+    position: fixed;
+    bottom: 0;
+}
+
+/* Fin de votre code existant */
+

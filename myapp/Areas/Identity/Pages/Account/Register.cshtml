@@ -1,0 +1,119 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .content-container {
+        flex: 1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .backgroundimage {
+        flex: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url('/images/bowls-with-condiments.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 650px;
+    }
+
+    .white-frame {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 720px;
+        max-width: 1000px;
+        height: 550px;
+        z-index: 3;
+        position: absolute;
+        top: 60px;
+        left: 500px;
+    }
+
+    form {
+        box-sizing: border-box;
+        width: 680px;
+        height: 520px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        color: beige;
+        background-color: black;
+        border: 1px solid white;
+        outline: none;
+    }
+
+        .btn-primary:hover {
+            background-color: darkgrey;
+            border: 1px solid white;
+        }
+
+    /* Changer la couleur de la bordure lorsqu'une zone de texte est en focus */
+    .form-control:focus {
+        border-color: beige;
+        box-shadow: 0 0 0 0.25rem beige;
+    }
+</style>
+
+<div class="content-container">
+    <div class="backgroundimage"></div>
+    <div class="white-frame">
+        <h1>@ViewData["Title"]</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <h2>Create a new account.</h2>
+                    <hr />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.ConfirmPassword"></label>
+                        <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary custom-button">S'inscrire'</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
